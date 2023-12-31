@@ -1,16 +1,22 @@
 #include "rbt.h"
 
+struct node* root=NULL;
+struct node* sentinel=NULL;
 int main()
 {
-	/* Declare the pointers */
-	tree_t *root = NULL;
+  sentinel=malloc(sizeof(tree_t));
+  sentinel->data=-1;
+  sentinel->color=black;
+  root=sentinel;
+
 	data_t data;
 	data_t minimum;
 	data_t maximum;
+  
     char option = 'y';
 	do
 	{
-		printf("1. Insert\n2. Delete\n3. Find Minimum\n4. Delete Minimum\n5. Find Maximum\n6. Delete Maximum\n");
+		printf("\n1. Insert\n2. Delete\n3. Find Minimum\n4. Delete Minimum\n5. Find Maximum\n6. Delete Maximum\n7. Print Tree\n");
 		int operation;
 		scanf(" %d", &operation);
 		switch (operation)
@@ -18,43 +24,58 @@ int main()
 			case 1:
 				printf("Enter the data to be inserted into the RB Tree: ");
 				scanf("%d", &data);
-			//	insert(&root, data);
-				/* Modify the above line to handle the error */
-			//	print_tree(root);
+			  insert(data);
+				print_tree(root, 1);
 				break;
-			case 2:
+		/*	case 2:
 				printf("Enter the data to be deleted from the RB Tree: ");
 				scanf("%d", &data);
 			//	delete(&root, data);
-				/* Modify the above line to handle the error */
 			//	print_tree(root);
 				break;
 			case 3:
 			//	find_minimum(&root, &minimum);
-				/* Modify the above line to handle the error */
 				printf("Minimum data: %d\n", minimum);
 			//	print_tree(root);
 				break;
 			case 4:
 			//	delete_minimum(&root);
-				/* Modify the above line to handle the error */
 			//	print_tree(root);
 				break;
 			case 5:
 			//	find_maximum(&root);
-				/* Modify the above line to handle the error */
 				printf("Maximum data: %d\n", maximum);
 			//	print_tree(root);
 				break;				
 			case 6:
 			//	delete_maximum(&root);
-				/* Modify the above line to handle the error */
 			//	print_tree(root);
-				break;				
+				break;	*/			
+      case 7:
+        print_tree(root, 1);
+        break;
 		}
-		printf("Want to continue? Press [yY | nN]: ");
-		scanf("\n%c", &option);
+		//printf("\nWant to continue? Press [yY|nN]: ");
+		//scanf("\n%c", &option);
 	}while (option == 'y' || option == 'Y');
 
 	return 0;
+}
+
+void print_tree(tree_t *ptr,  int level)
+{
+  int i;
+  if(ptr != sentinel)
+  {
+    print_tree(ptr->right, level+1);
+    printf("\n");
+    for(i=0; i<level; i++)
+      printf("    ");
+    printf("%d", ptr->data);
+    if(ptr->color == red)
+      printf("^");
+    else
+      printf("*");
+    print_tree(ptr->left, level+1);
+  }
 }
