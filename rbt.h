@@ -5,6 +5,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<limits.h>
 
 typedef int data_t;
 typedef struct node
@@ -23,4 +24,8 @@ void insert(data_t data);
 void insertbalance(tree_t *ptr);
 void rotateright(tree_t *ptr);
 void rotateleft(tree_t *ptr);
+
+
+int find_maximum(data_t *max);
+int find_minimum(data_t *min);
 #endif

@@ -76,7 +76,7 @@ void insertbalance(tree_t* ptr)
     { 
       if( par ==  grandpar->right)
       {
-      uncle=grandpar->right;
+      uncle=grandpar->left;
       if(uncle->color == red)       //case 1:parent is red and parent is right child and uncle is red then recolor 
       {
          par->color=black;

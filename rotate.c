@@ -6,7 +6,7 @@ extern tree_t* root;
 
 void rotateleft(tree_t* pptr)
 {
-  struct node*aptr;
+  tree_t* aptr;
   aptr=pptr->right;   // aptr is right child of pptr
   pptr->right=aptr->left;
 
@@ -18,7 +18,7 @@ void rotateleft(tree_t* pptr)
 
   if(pptr->parent == sentinel)
       root=aptr;
-  else if( pptr= pptr->parent->left)
+  else if( pptr== pptr->parent->left)
       pptr->parent->left=aptr;
   else
       pptr->parent->right=aptr;
@@ -33,7 +33,7 @@ void rotateright(tree_t *pptr)
   aptr=pptr->left;
   pptr->left=aptr->right;
 
-  if(aptr->right == sentinel)
+  if(aptr->right != sentinel)
     aptr->right->parent=pptr;
   aptr->parent=pptr->parent;
 
