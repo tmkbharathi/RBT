@@ -41,10 +41,10 @@ int main()
 				   printf("Minimum data: %d\n", minimum);
 			  print_tree(root, 1);
 				break;
-			//case 4:
-			//	delete_minimum(&root);
-			//	print_tree(root, 1);
-			//	break;
+			case 4:
+				delete_minimum();
+				print_tree(root, 1);
+				break;
 			case 5:
 				dummy=find_maximum(&maximum);
         if (dummy == INT_MIN)
@@ -53,9 +53,9 @@ int main()
 				    printf("Maximum data: %d\n", maximum);
 				print_tree(root, 1);
 				break;				
-			//case 6:
-			//	delete_maximum(&root);
-			//	print_tree(root, 1);
+			case 6:
+				delete_maximum();
+				print_tree(root, 1);
 				break;				
       case 7:
         print_tree(root, 1);

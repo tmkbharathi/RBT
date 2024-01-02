@@ -34,5 +34,7 @@ int find(int item, tree_t** loc);
 void delbalance(tree_t *ptr);
 tree_t* succ(tree_t *loc);
 
+int delete_maximum();
+int delete_minimum();
 
 #endif
