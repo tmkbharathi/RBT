@@ -28,4 +28,11 @@ void rotateleft(tree_t *ptr);
 
 int find_maximum(data_t *max);
 int find_minimum(data_t *min);
+
+void delete(data_t item);
+int find(int item, tree_t** loc);
+void delbalance(tree_t *ptr);
+tree_t* succ(tree_t *loc);
+
+
 #endif

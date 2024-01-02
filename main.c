@@ -27,12 +27,12 @@ int main()
 			  insert(data);
 				print_tree(root, 1);
 				break;
-		//	case 2:
-		//		printf("Enter the data to be deleted from the RB Tree: ");
-			//	scanf("%d", &data);
-			//	delete(&root, data);
-			//	print_tree(root, 1);
-			//	break;
+			case 2:
+				printf("Enter the data to be deleted from the RB Tree: ");
+				scanf("%d", &data);
+				delete(data);
+				print_tree(root, 1);
+				break;
 			case 3:
 				dummy=find_minimum(&minimum);
         if (dummy == INT_MAX)
