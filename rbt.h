@@ -18,7 +18,8 @@ typedef struct node
 }tree_t;
 
 
-void print_tree(tree_t *ptr, int level);
+void print_tree(tree_t *ptr, int level, int direction);
+void freeptr(tree_t *clean);
 
 void insert(data_t data);
 void insertbalance(tree_t *ptr);

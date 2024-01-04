@@ -46,6 +46,7 @@ void delete(data_t item)
     else
       delbalance(child);
   }
+  free(ptr);
 }
 
 void delbalance(tree_t *nptr)
