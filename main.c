@@ -4,6 +4,9 @@ tree_t* root=NULL;
 tree_t* sentinel=NULL;
 int main()
 {
+  printf("\033[4;32m");
+  printf("Red Black Tree\n");
+  printf("\033[0m");
   sentinel=malloc(sizeof(tree_t));
   sentinel->data=-1;
   sentinel->color=black;
@@ -59,7 +62,7 @@ int main()
 				break;				
       case 7:
         if(root==sentinel)
-             printf("\t\tEmptry tree\n");
+             printf("\t\tEmpty tree\n");
         print_tree(root, 1,0);
         break;
 		}
